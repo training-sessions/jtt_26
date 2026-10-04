@@ -22,16 +22,22 @@
     <module>webapp</module>
   </modules>
 
-  <distributionManagement>
-    <site>
-      <id>site-server</id>
-      <name>Test Project Site</name>
-      <url>file:///tmp/maven-project-site</url>
-    </site>
-  </distributionManagement>
+<distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>ip-172-31-40-23-releases</name>
+        <url>http://54.175.230.117:8082/artifactory/jtt-project-libs-snapshot-local</url>
+    </repository>
+</distributionManagement>
 
   <build>
     <plugins>
+
+	<plugin>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>4.0.0.4121</version> <!-- Replace with your desired version -->
+        </plugin>
 
        <plugin>
             <groupId>org.apache.maven.plugins</groupId>
